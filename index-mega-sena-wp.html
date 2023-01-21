@@ -173,19 +173,32 @@
     
     <script text="text/javascript">
         function numeros(){
+            let lista = []
+            
+
             //let aleatorio = Math.floor(Math.random() * (100 - 1) + 1);
             let n1 = document.getElementById('n1')
-            let ale1 = Math.floor(Math.random() * (60 - 1) + 1)
+            let ale1 = Math.floor(Math.random() * (60 - 1) + 1)            
+
             let n2 = document.getElementById('n2')
-            let ale2 = Math.floor(Math.random() * (60 - 1) + 1)
+            let ale2 = Math.floor(Math.random() * (60 - 1) + 1)            
+
             let n3 = document.getElementById('n3')
-            let ale3 = Math.floor(Math.random() * (60 - 1) + 1)
+            let ale3 = Math.floor(Math.random() * (60 - 1) + 1)            
+
             let n4 = document.getElementById('n4')
-            let ale4 = Math.floor(Math.random() * (60 - 1) + 1)
+            let ale4 = Math.floor(Math.random() * (60 - 1) + 1)            
+
             let n5 = document.getElementById('n5')
-            let ale5 = Math.floor(Math.random() * (60 - 1) + 1)
+            let ale5 = Math.floor(Math.random() * (60 - 1) + 1)            
+
             let n6 = document.getElementById('n6')
             let ale6 = Math.floor(Math.random() * (60 - 1) + 1)
+
+            lista.unshift(ale1, ale2, ale3, ale4, ale5, ale6)
+            
+            console.log(lista)
+           
             
 
             let num = document.getElementById('numeros')
