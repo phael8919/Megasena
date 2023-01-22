@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaSena</title>    
+    <style>
+        .conteudo{
+            display: grid;
+            margin: 30px auto; 
+            padding: 15px; 
+            background: rgb(236, 235, 235); 
+            width: 50%; 
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .titulo{
+            padding: 20px 20px 10px 0;
+            display: grid; 
+            grid-template-columns: 15% 85%;
+        }
+
+        .botao{
+            margin: 0 10px 10px 0;
+        }
+
+        .botao button{
+            height: 40px;
+            width: 120px;
+            font-size: 18px;
+            background: rgb(49, 49, 49);
+            border-radius: 5px;
+            border: rgb(49, 49, 49);
+            color: azure;
+            cursor: pointer;            
+        }
+
+        .botao button:hover{
+             transition: 0.3s;  
+             opacity: 50%;  
+        }
+
+        .numeros{
+            margin: 20px;           
+            display: inline;
+            grid-template-rows: 20%;  
+            justify-content: center;             
+        }
+
+        .num-item{
+           background: rgb(49, 49, 49);
+           border-radius: 50%;
+           color: azure;
+           margin: 20px 10px 20px 10px;
+           text-align: center;           
+           padding: 3%;
+                      
+        }
+
+        @media (max-width: 482px){
+           .conteudo{
+                width: 60%;
+           }   
+
+           .numeros{
+                margin: 20px;           
+                display: flex;
+                flex-wrap: wrap;                  
+                justify-content: center;         
+            }
+
+            .megas{
+                text-align: center;
+                padding-left: 55px;
+                clear: left;
+            }
+           
+           .num-item{
+                text-align: center;           
+                padding: 4%;
+                      
+           }
+
+           .botao button{
+                width: auto;
+                font-size: 15px;
+           }
+           
+
+           .imagem{
+                display: none;
+                float: left;
+           }
+        }
+
+        @media (max-width: 768px) and (min-width:481px){
+           .conteudo{
+                width: 70%;
+           }   
+
+           .numeros{
+                margin: 20px;           
+                display: flex;
+                flex-wrap: wrap;                  
+                justify-content: center;         
+            }
+           
+           .num-item{
+                text-align: center;           
+                padding: 6%;
+                      
+           }
+
+           .botao button{
+                width: auto;
+                font-size: 15px;
+           }
+        }
+
+        @media (max-width: 920px) and (min-width:768px){
+           .conteudo{
+                width: 60%;
+           }   
+
+           .numeros{
+                margin: 20px;           
+                display: flex;
+                flex-wrap: wrap;                  
+                justify-content: center;         
+            }
+           
+           .num-item{
+                text-align: center;           
+                padding: 4%;
+                      
+           }
+        }
+
+        
+    </style>
+</head>
+<body onload="numeros()" style="margin: 0; padding: 20px; font-family:tahoma;">
+    <div class="conteudo">        
+            
+            <div class="titulo" >
+                            
+                <span class="imagem" style="margin-left: 15px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126157.png" alt="" width="50">
+                </span>
+                
+                <span >
+                    <h2 class="megas">Números da Mega Sena!</h2>                        
+                </span>                    
+                        
+            </div>
+            
+            <div class="botao" onclick="numeros()">
+                <button class=" ">Clique aqui!</button>
+            </div>
+            <div class="numeros" id="numeros">
+                <span class="num-item" id="n1"></span>
+                <span class="num-item" id="n2"></span>
+                <span class="num-item" id="n3"></span>
+                <span class="num-item" id="n4"></span>
+                <span class="num-item" id="n5"></span>
+                <span class="num-item" id="n6"></span>                
+            </div>
+            
+        
+    </div>
+    
+    <script text="text/javascript">
+        function numeros(){
+            let lista = []
+            
+
+            //let aleatorio = Math.floor(Math.random() * (100 - 1) + 1);
+            let n1 = document.getElementById('n1')
+            let ale1 = Math.floor(Math.random() * (60 - 1) + 1)            
+
+            let n2 = document.getElementById('n2')
+            let ale2 = Math.floor(Math.random() * (60 - 1) + 1)            
+
+            let n3 = document.getElementById('n3')
+            let ale3 = Math.floor(Math.random() * (60 - 1) + 1)            
+
+            let n4 = document.getElementById('n4')
+            let ale4 = Math.floor(Math.random() * (60 - 1) + 1)            
+
+            let n5 = document.getElementById('n5')
+            let ale5 = Math.floor(Math.random() * (60 - 1) + 1)            
+
+            let n6 = document.getElementById('n6')
+            let ale6 = Math.floor(Math.random() * (60 - 1) + 1)
+
+            lista.unshift(ale1, ale2, ale3, ale4, ale5, ale6)
+            
+            console.log(lista)
+           
+            
+
+            let num = document.getElementById('numeros')
+            //num.innerHTML += `<span class="num-item">${aleatorio}</span>`
+            n1.innerHTML = ale1 <= 9 ? "0"+ale1 : ale1 
+            n2.innerHTML = ale2 <= 9 ? "0"+ale2 : ale2 
+            n3.innerHTML = ale3 <= 9 ? "0"+ale3 : ale3 
+            n4.innerHTML = ale4 <= 9 ? "0"+ale4 : ale4 
+            n5.innerHTML = ale5 <= 9 ? "0"+ale5 : ale5 
+            n6.innerHTML = ale6 <= 9 ? "0"+ale6 : ale6 
+            
+            
+            
+        }
+        
+    </script>
+    
+</body>
+</html>
